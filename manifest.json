@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Peek Token Capture",
+  "version": "1.0",
+  "description": "Access your OpenAI session token with a single click",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {},
+  "permissions": ["webRequest", "activeTab", "clipboardWrite", "storage"],
+  "host_permissions": ["*://api.openai.com/*", "*://platform.openai.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://platform.openai.com/usage*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["peek.webp"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://api.openai.com https://platform.openai.com"
+  }
+}

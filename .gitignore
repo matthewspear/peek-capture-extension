@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Extension
+*.crx
+*.pem
+*.zip
+
+node_modules/
+.env
+
