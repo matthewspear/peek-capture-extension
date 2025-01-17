@@ -1,4 +1,4 @@
-# Peek OpenAI Token Extension
+# Peek Capture Extension
 
 Chrome extension to quickly grab your OpenAI session token for use with [Peek](https://apps.apple.com/gb/app/peek-ai-api-monitoring/id6447682119).
 
